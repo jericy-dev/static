@@ -3,7 +3,7 @@ pipeline {
      stages {
          stage('Upload to AWS') {
              steps {
-                withAWS(credentials: 'AKIATYYD46GTKV4M7JHI', region: 'us-east-1')
+                withAWS(credentials: 'AKIATYYD46GTKV4M7JHI', region: 'us-east-2')
                  sh 'echo "Hello World"'
                  s3Upload acl: 'Public', bucket: 'project4jenkins', file: 'index.html' 
                  sh '''
