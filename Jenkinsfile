@@ -12,7 +12,7 @@ pipeline {
              steps {
                 withAWS(credentials: 'AKIATYYD46GTKV4M7JHI', region: 'us-east-2')
                  sh 'echo "Hello World"'
-                 s3Upload acl: 'Public', bucket: 'project4jenkins', file: 'index.html' 
+                 s3Upload(acl: 'Public', bucket: 'project4jenkins', file: 'index.html') 
                  sh '''
                      echo "Multiline shell steps works too"
                      ls -lah
