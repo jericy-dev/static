@@ -5,11 +5,7 @@ pipeline {
         steps {
           withAWS(region:'us-east-2',credentials:'AKIATYYD46GTKV4M7JHI') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jericjenkinsp4')
-            sh 'echo "Hello World"'
-            sh '''
-                     echo "Multiline shell steps works too"
-                     ls -lah
-            '''
+
           }
         }
       }
